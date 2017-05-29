@@ -1,0 +1,43 @@
+@startuml
+package framework{
+    class Maker{
+        cook()
+        cookFood()
+        risterFood()
+    }
+    class Food{
+        order()
+    }
+}
+package idcard{
+    class Shokunin{
+        owners
+        cookFood()
+        risterFood()
+        getOwners()
+    }
+    class pâtissier{
+        owners
+        cookFood()
+        risterFood()
+        getOwners()
+    }
+    class Sushi{
+        owner
+        eat()
+        getOwner()
+    }
+    class Cake{
+        owner
+        eat()
+        getOwner()
+    }
+}
+Maker <|--- Shokunin
+Maker <|--- pâtissier
+Food <|--- Sushi
+Food <|--- Cake
+Food <--- "create" Maker
+Sushi  <--- "create" Shokunin
+Cake  <--- "create" pâtissier
+@enduml
